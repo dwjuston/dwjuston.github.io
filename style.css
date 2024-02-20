@@ -30,11 +30,14 @@ header {
 
 /* Table of Contents - Left Panel */
 #toggle-toc-btn {
-    position: fixed;
-    top: 0; /* Adjust as needed */
-    left: 0; /* Adjust based on the desired visibility */
-    z-index: 10; /* Ensure it's above other content */
-    /* Add more styles for button appearance */
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    top: 5%; /* Adjust based on header size */
+    left: 10px; /* Slight offset from the edge */
 }
 
 #toc-panel {

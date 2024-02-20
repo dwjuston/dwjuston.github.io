@@ -42,9 +42,13 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Load Episode Content
     function loadEpisode(episodeId) {
-        const episodeContent = episodesData[episodeId]/* Fetch the episode content based on episodeId */;
-        const contentPanel = document.getElementById('content-panel');
-        contentPanel.innerHTML = episodeContent; // Replace existing content
+        const episode = episodesData[episodeId];
+        const episodeContentArea = document.getElementById('episode-content');
+        episodeContentArea.innerHTML = `
+            <h2>${episode.text}</h2>
+            <img src="${episode.imageUrl}" alt="Episode Image">
+            <audio controls src="${episode.audioUrl}"></audio>
+        `;
     }
     // Toggle Table of Contents Visibility
     document.getElementById('toggle-toc-btn').addEventListener('click', function() {
