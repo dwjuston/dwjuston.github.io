@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // Toggle Table of Contents Visibility
     document.getElementById('toggle-toc-btn').addEventListener('click', function() {
         const tocPanel = document.getElementById('toc-panel');
-        tocPanel.style.width = tocPanel.style.width === '0px' ? '20%' : '0px';
+        tocPanel.classList.toggle('hidden');
     });
 
     // Style "Continue" Button

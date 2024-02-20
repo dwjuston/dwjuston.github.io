@@ -36,8 +36,12 @@ header {
 }
 
 #toc-panel {
-    /* Ensure there's space for the toggle button */
-    padding-top: 40px; /* Adjust based on the toggle button size */
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+#toc-panel.hidden {
+    transform: translateX(-100%);
 }
 
 /* Content Area - Middle Panel */
