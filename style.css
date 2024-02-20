@@ -22,33 +22,38 @@ header {
 /* Main container styling */
 #main-container {
     display: flex;
-    flex-direction: row;
-    transition: margin-left 0.3s ease;
 }
 
 /* Table of Contents - Left Panel */
 #toggle-toc-btn {
-    position: fixed;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 100;
+    display: block;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
 }
 
 #toc-panel {
-    transition: transform 0.3s ease;
-    transform: translateX(0);
+    width: 250px; /* Adjust based on your design */
+    transition: margin-left 0.5s;
 }
 
-#toc-panel.hidden {
-    transform: translateX(-100%);
+
+/* When TOC is hidden */
+.toc-hidden #toc-panel {
+    margin-left: -250px; /* Same as TOC panel width */
+}
+
+.toc-hidden #content-panel {
+    margin-left: 0;
 }
 
 /* Content Area - Middle Panel */
 #content-panel {
     flex-grow: 1;
-    padding: 20px;
-    overflow-y: auto;
+    transition: margin-left 0.5s;
 }
 
 #content-panel.expanded {
