@@ -24,6 +24,10 @@ header {
     display: flex;
 }
 
+.episode.selected {
+    background-color: #f0f0f0; /* Or any color that matches your design */
+}
+
 /* Table of Contents - Left Panel */
 #toggle-toc-btn {
     position: fixed;
