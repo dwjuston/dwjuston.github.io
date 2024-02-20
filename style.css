@@ -26,12 +26,18 @@ header {
 }
 
 /* Table of Contents - Left Panel */
+#toggle-toc-btn {
+    display: block;
+    padding: 5px 10px;
+    margin: 5px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    cursor: pointer;
+}
+
 #toc-panel {
-    width: 20%;
-    background-color: #eee;
-    overflow-y: auto;
-    position: relative;
-    transition: width 0.5s;
+    /* Ensure there's space for the toggle button */
+    padding-top: 40px; /* Adjust based on the toggle button size */
 }
 
 /* Content Area - Middle Panel */
