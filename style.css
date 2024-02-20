@@ -22,17 +22,17 @@ header {
 /* Main container styling */
 #main-container {
     display: flex;
-    height: calc(100% - 60px); /* Adjust based on header height */
+    flex-direction: row;
+    transition: margin-left 0.3s ease;
 }
 
 /* Table of Contents - Left Panel */
 #toggle-toc-btn {
-    display: block;
-    padding: 5px 10px;
-    margin: 5px;
-    background-color: #f9f9f9;
-    border: 1px solid #ddd;
-    cursor: pointer;
+    position: fixed;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 100;
 }
 
 #toc-panel {
@@ -49,6 +49,10 @@ header {
     flex-grow: 1;
     padding: 20px;
     overflow-y: auto;
+}
+
+#content-panel.expanded {
+    margin-left: 0;
 }
 
 /* Right Panel - Customization Controls and Sticky Notes */

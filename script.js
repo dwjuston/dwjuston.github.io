@@ -47,7 +47,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Toggle Table of Contents Visibility
     document.getElementById('toggle-toc-btn').addEventListener('click', function() {
         const tocPanel = document.getElementById('toc-panel');
+        const contentPanel = document.getElementById('content-panel');
         tocPanel.classList.toggle('hidden');
+        contentPanel.classList.toggle('expanded');
     });
 
     // Style "Continue" Button
