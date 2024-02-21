@@ -17,7 +17,7 @@ function loadHomePage() {
     books.forEach(book => {
         home.innerHTML += `
             <li>
-                <strong>${book.name}</strong> by ${book.author} (${book.year})
+                <a href="main.html">${book.name}</a> by ${book.author} (${book.year})
                 <p>${book.description}</p>
             </li>
         `;

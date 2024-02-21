@@ -1,3 +1,12 @@
 .home {
     padding: 20px;
 }
+.home a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.home a:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
