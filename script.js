@@ -127,3 +127,19 @@ document.addEventListener('DOMContentLoaded', function() {
         mainContainer.classList.toggle('main-shrinked');
     });
 });
+
+function updateToC(contents) {
+    const tocContainer = document.getElementById('toc');
+    let tocHTML = '<ul>';
+    contents.forEach(content => {
+        tocHTML += `<li><a href="${content.link}">${content.title}</a></li>`;
+    });
+    tocHTML += '</ul>';
+    tocContainer.innerHTML = tocHTML;
+}
+const contents = [
+    { title: 'Chapter 1: Introduction', link: '#chapter1' },
+    { title: 'Chapter 2: Getting Started', link: '#chapter2' },
+    // Add more chapters as needed
+];
+updateToC(contents);
