@@ -109,7 +109,9 @@ function loadEpisodeData(chapterIndex, episodeIndex) {
     // Reload the audio element to apply the new source
     document.querySelector('audio').load();
     document.querySelector('audio').play().catch(e => console.error("Autoplay was prevented.", e));
-    
+
+    currentChapterId = chapterIndex;
+    currentEpisodeId = episodeIndex;
 }
 
 function goToNextEpisode() {
