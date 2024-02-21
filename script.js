@@ -83,9 +83,9 @@ function getNextChapterAndEpisodeId(currentChapterId, currentEpisodeId) {
 }
 
 function loadEpisodeData(chapterIndex, episodeIndex) {
-    const chapterData = chapterDataList[chapterIndex];
-    const chapterTitle = chapterData.chapterTitle;
-    const episodeData = chapterData.episodes[episodeIndex];
+    let chapterData = chapterDataList[chapterIndex];
+    let chapterTitle = chapterData.chapterTitle;
+    let episodeData = chapterData.episodes[episodeIndex];
     // Update the content dynamically
     document.querySelector('main h2').textContent = chapterTitle + " (" + episodeData.episodeNumber + ")";
     document.querySelector('main p').textContent = episodeData.mainText;
@@ -117,6 +117,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 function populateTableOfContents() {
+    console.log(chapterDataList); // To check the data structure
+    
     const toc = document.getElementById('tableOfContents');
     toc.innerHTML = '<h2>Table of Contents</h2>';
 
@@ -128,6 +130,9 @@ function populateTableOfContents() {
         const episodesElem = document.createElement('ul');
         episodesElem.className = 'episodes hidden';
         episodesElem.id = `chapter-${chapterIndex}-episodes`;
+
+        console.log(chapterElem);
+        console.log(episodesElem);
 
         chapter.episodes.forEach((episode, episodeIndex) => {
             const episodeElem = document.createElement('li');
@@ -145,4 +150,4 @@ function toggleChapter(chapterIndex) {
     episodesElem.classList.toggle('hidden');
 }
 
-populateTableOfContents()
+document.addEventListener('DOMContentLoaded', populateTableOfContents);
