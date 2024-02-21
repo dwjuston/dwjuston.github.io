@@ -56,8 +56,31 @@ const chapterDataList = [
     // Add more chapters as needed
 ];
 
-let currentEpisodeIndex = 0; // Start with the first episode
+let currentChapterId = 0; // Starting with the first chapter
+let currentEpisodeId = 0; // Starting with the first episode
 
+function getNextChapterAndEpisodeId(currentChapterId, currentEpisodeId) {
+    // Check if there's a next episode in the current chapter
+    if (currentEpisodeId + 1 < chapterDataList[currentChapterId].episodes.length) {
+        // Next episode is in the same chapter
+        return {
+            nextChapterId: currentChapterId,
+            nextEpisodeId: currentEpisodeId + 1
+        };
+    } else if (currentChapterId + 1 < chapterDataList.length) {
+        // Current episode is the last in the current chapter, move to the next chapter
+        // Assuming the next chapter has at least one episode
+        return {
+            nextChapterId: currentChapterId + 1,
+            nextEpisodeId: 0 // Start at the first episode of the next chapter
+        };
+    } else {
+        // Current episode is the last in the last chapter, no next chapter or episode
+        // Here, you could loop back to the start or indicate the end; depends on desired behavior
+        // To indicate the end, returning null or similar could work:
+        return null;
+    }
+}
 
 function loadEpisodeData(chapterIndex, episodeIndex) {
     const episodeData = chapterDataList[chapterIndex].episodes[episodeIndex];
@@ -76,8 +99,13 @@ function loadEpisodeData(chapterIndex, episodeIndex) {
 }
 
 function goToNextEpisode() {
-    // Increment the episode index to load the next episode
-    loadEpisodeData(currentEpisodeIndex + 1);
+    const next = getNextChapterAndEpisodeId(currentChapterId, currentEpisodeId);
+    if (next) {
+        // Update currentChapterId and currentEpisodeId if moving to the next episode
+        currentChapterId = next.nextChapterId;
+        currentEpisodeId = next.nextEpisodeId;
+        loadEpisodeData(currentChapterId, currentEpisodeId)
+    } 
 }
 
 document.addEventListener('DOMContentLoaded', function() {
