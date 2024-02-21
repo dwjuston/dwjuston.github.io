@@ -134,3 +134,41 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+const tocData = [
+    {
+        chapterTitle: "Chapter 1",
+        episodes: ["Chapter 1 (1)", "Chapter 1 (2)", "Chapter 1 (3)"]
+    },
+    {
+        chapterTitle: "Chapter 2",
+        episodes: ["Chapter 2 (1)", "Chapter 2 (2)"]
+    }
+];
+
+function loadTableOfContents(tocData) {
+    const toc = document.getElementById('tableOfContents');
+    toc.innerHTML = '<h2>Table of Contents</h2>'; // Reset ToC content
+
+    const ul = document.createElement('ul');
+
+    tocData.forEach(chapter => {
+        let chapterElem = document.createElement('li');
+        chapterElem.textContent = chapter.chapterTitle;
+        ul.appendChild(chapterElem);
+
+        let episodesUl = document.createElement('ul');
+        chapter.episodes.forEach(episode => {
+            let episodeLi = document.createElement('li');
+            episodeLi.textContent = episode;
+            episodesUl.appendChild(episodeLi);
+        });
+        ul.appendChild(episodesUl);
+    });
+
+    toc.appendChild(ul);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    loadTableOfContents(tocData); // Populate ToC when the page loads
+});
