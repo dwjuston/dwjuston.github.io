@@ -150,4 +150,9 @@ function toggleChapter(chapterIndex) {
     episodesElem.classList.toggle('hidden');
 }
 
+function toggleTableOfContents() {
+    const toc = document.getElementById('tableOfContents');
+    toc.classList.toggle('hidden');
+}
+
 document.addEventListener('DOMContentLoaded', populateTableOfContents);
