@@ -28,3 +28,19 @@ figure img {
     cursor: pointer;
     font-weight: bold;
 }
+
+.toc {
+    width: 200px; /* Adjust width as needed */
+    padding: 20px;
+    height: 100vh; /* Full height */
+    overflow-y: auto; /* Scrollable if content is too long */
+    position: fixed; /* Stay in place when scrolling */
+    left: 0;
+    top: 0;
+    background-color: #f9f9f9; /* Light background */
+}
+
+.content {
+    margin-left: 200px; /* Adjust according to the width of the toc */
+    padding: 20px;
+}
