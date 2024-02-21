@@ -121,7 +121,7 @@ function goToNextEpisode() {
         currentChapterId = next.nextChapterId;
         currentEpisodeId = next.nextEpisodeId;
         loadEpisodeData(currentChapterId, currentEpisodeId)
-        highlightActiveToCItem(chapterId, episodeId);
+        highlightActiveToCItem(currentChapterId, currentEpisodeId);
     } 
 }
 
