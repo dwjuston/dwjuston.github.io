@@ -46,7 +46,7 @@ function goToNextEpisode() {
 }
 
 // Attach the goToNextEpisode function to the continue button's click event
-document.querySelector('continueButton').addEventListener('click', (event) => {
+document.querySelector('#continueButton').addEventListener('click', (event) => {
     event.preventDefault();
     goToNextEpisode();
 });
@@ -61,9 +61,15 @@ function toggleTableOfContents() {
 
 function populateTableOfContents() {
     const toc = document.getElementById('tableOfContents');
-    toc.innerHTML = '<h2>Table of Contents</h2><ul>' + episodes.map((episode, index) => 
-        `<li><a href="#" onclick="loadEpisode(${index}); toggleTableOfContents();">${episode.title}</a></li>`
-    ).join('') + '</ul>';
+    toc.innerHTML = `
+        <h2>Table of Contents</h2>
+        <ul>
+            <li><a href="#" onclick="loadEpisodeData(0); toggleTableOfContents();">Chapter 1: Introduction</a></li>
+            <li><a href="#" onclick="loadEpisodeData(1); toggleTableOfContents();">Chapter 2: The Journey Begins</a></li>
+            <li><a href="#" onclick="loadEpisodeData(2); toggleTableOfContents();">Chapter 3: The First Challenge</a></li>
+            <!-- Add more chapters as needed -->
+        </ul>
+    `;
 }
 
 // Make sure to call populateTableOfContents() after defining episodes
