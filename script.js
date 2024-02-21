@@ -28,7 +28,7 @@ function loadEpisodeData(index) {
     episodeData = episodeDataList[index]
     alert(episodeData); // Debugging message
     // Update the content dynamically
-    document.querySelector('h2').textContent = episodeData.title;
+    document.querySelector('main h2').textContent = episodeData.title;
     document.querySelector('main p').textContent = episodeData.mainText;
     document.querySelector('audio source').src = episodeData.audioUrl;
     document.querySelector('figure img').src = episodeData.imageUrl;
@@ -50,7 +50,6 @@ function goToNextEpisode() {
 document.addEventListener('DOMContentLoaded', function() {
     document.querySelector('#continueButton').addEventListener('click', (event) => {
         event.preventDefault();
-        alert('Continue button clicked!');
         goToNextEpisode();
     });
 });
