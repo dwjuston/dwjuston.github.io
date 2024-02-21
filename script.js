@@ -1,26 +1,53 @@
-function loadChapterData() {
-    // Define the data to be loaded
-    const chapterData = {
-        title: "Chapter 1: asd (1)",
-        mainText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.",
-        audioUrl: "https://example.com/audiofile.mp3",
-        imageUrl: "https://source.unsplash.com/random/800x600?landscape"
-    };
+// Define the data to be loaded
+const episodeDataList = [
+        {
+            title: "Chapter 1: Introduction",
+            mainText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
+            audioUrl: "https://example.com/audiofile1.mp3",
+            imageUrl: "https://source.unsplash.com/random/800x600?nature"
+        },
+        {
+            title: "Chapter 2: The Journey Begins",
+            mainText: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem...",
+            audioUrl: "https://example.com/audiofile2.mp3",
+            imageUrl: "https://source.unsplash.com/random/800x600?forest"
+        },
+        {
+            title: "Chapter 3: The First Challenge",
+            mainText: "At vero eos et accusamus et iusto odio dignissimos ducimus...",
+            audioUrl: "https://example.com/audiofile3.mp3",
+            imageUrl: "https://source.unsplash.com/random/800x600?mountain"
+        }
+        // Add more episodes as needed
+    ];
 
+let currentEpisodeIndex = 0; // Start with the first episode
+
+
+function loadEpisodeData(index) {
+    episodeData = episodeDataList[index]
     // Update the content dynamically
-    document.querySelector('h2').textContent = chapterData.title;
-    document.querySelector('main p').textContent = chapterData.mainText;
-    document.querySelector('audio source').src = chapterData.audioUrl;
-    document.querySelector('figure img').src = chapterData.imageUrl;
+    document.querySelector('h2').textContent = episodeData.title;
+    document.querySelector('main p').textContent = episodeData.mainText;
+    document.querySelector('audio source').src = episodeData.audioUrl;
+    document.querySelector('figure img').src = episodeData.imageUrl;
 
     // Reload the audio element to apply the new source
     document.querySelector('audio').load();
+
+    currentEpisodeIndex = index;
 }
 
-// Call the function to update the page content
-document.addEventListener('DOMContentLoaded', loadChapterData);
+function goToNextEpisode() {
+    // Increment the episode index to load the next episode
+    loadEpisode(currentEpisodeIndex + 1);
+}
 
-function preventDefaultAction(event) {
+// Attach the goToNextEpisode function to the continue button's click event
+document.querySelector('button').addEventListener('click', (event) => {
     event.preventDefault();
-    // Add further functionality here for the continue button
-}
+    goToNextEpisode();
+});
+
+// Load the initial episode when the page is ready
+document.addEventListener('DOMContentLoaded', () => loadEpisode(currentEpisodeIndex));
