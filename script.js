@@ -83,9 +83,11 @@ function getNextChapterAndEpisodeId(currentChapterId, currentEpisodeId) {
 }
 
 function loadEpisodeData(chapterIndex, episodeIndex) {
-    const episodeData = chapterDataList[chapterIndex].episodes[episodeIndex];
+    const chapterData = chapterDataList[chapterIndex];
+    const chapterTitle = chapterData.chapterTitle;
+    const episodeData = chapterData.episodes[episodeIndex];
     // Update the content dynamically
-    // document.querySelector('main h2').textContent = episodeData.title;
+    document.querySelector('main h2').textContent = chapterTitle + episodeData.episodeNumber;
     document.querySelector('main p').textContent = episodeData.mainText;
     document.querySelector('audio source').src = episodeData.audioUrl;
     document.querySelector('figure img').src = episodeData.imageUrl;
