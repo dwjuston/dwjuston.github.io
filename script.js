@@ -87,7 +87,7 @@ function loadEpisodeData(chapterIndex, episodeIndex) {
     let chapterTitle = chapterData.chapterTitle;
     let episodeData = chapterData.episodes[episodeIndex];
     // Update the content dynamically
-    document.querySelector('main h2').textContent = chapterTitle + " (" + episodeData.episodeNumber + ")";
+    document.querySelector('.content h2').textContent = chapterTitle + " (" + episodeData.episodeNumber + ")";
     document.querySelector('main p').textContent = episodeData.mainText;
     document.querySelector('audio source').src = episodeData.audioUrl;
     document.querySelector('figure img').src = episodeData.imageUrl;
@@ -135,6 +135,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
+const bookName = "AAA"
 const tocData = [
     {
         chapterTitle: "Chapter 3",
@@ -148,7 +149,7 @@ const tocData = [
 
 function loadTableOfContents(tocData) {
     const toc = document.getElementById('tableOfContents');
-    toc.innerHTML = '<h2>Table of Contents</h2>'; // Reset ToC content
+    toc.innerHTML = '<h2>'+bookName+'</h2>'; // Reset ToC content
 
     const ul = document.createElement('ul');
 
