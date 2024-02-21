@@ -40,9 +40,19 @@ figure img {
     background-color: #f9f9f9; /* Light background */
 }
 
+
+
 .content {
-    margin-left: 200px; /* Adjust according to the width of the toc */
+    transition: margin-left 0.3s; /* Smooth transition for margin changes */
     padding: 20px;
+}
+
+.content-expanded {
+    margin-left: 0; /* Expand to full width when ToC is hidden */
+}
+
+.content-contracted {
+    margin-left: 250px; /* Space for ToC when it's visible */
 }
 
 .hidden {

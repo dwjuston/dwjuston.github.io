@@ -123,5 +123,13 @@ document.addEventListener('DOMContentLoaded', function() {
     toggleTocBtn.addEventListener('click', function(event) {
         event.preventDefault(); // Prevent the link from navigating
         toc.classList.toggle('hidden'); // Toggle the visibility of the ToC
+
+        if (toc.classList.contains('hidden')) {
+            content.classList.remove('content-contracted');
+            content.classList.add('content-expanded');
+        } else {
+            content.classList.remove('content-expanded');
+            content.classList.add('content-contracted');
+        }
     });
 });
