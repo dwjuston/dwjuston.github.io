@@ -1,31 +1,66 @@
 // Define the data to be loaded
-const episodeDataList = [
-        {
-            title: "Chapter 1: Introduction",
-            mainText: "Lorem ipsum dolor sit amet, consectetur adipiscing elit...",
-            audioUrl: "https://example.com/audiofile1.mp3",
-            imageUrl: "https://source.unsplash.com/random/800x600?nature"
-        },
-        {
-            title: "Chapter 2: The Journey Begins",
-            mainText: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem...",
-            audioUrl: "https://example.com/audiofile2.mp3",
-            imageUrl: "https://source.unsplash.com/random/800x600?forest"
-        },
-        {
-            title: "Chapter 3: The First Challenge",
-            mainText: "At vero eos et accusamus et iusto odio dignissimos ducimus...",
-            audioUrl: "https://example.com/audiofile3.mp3",
-            imageUrl: "https://source.unsplash.com/random/800x600?mountain"
-        }
-        // Add more episodes as needed
-    ];
+const chapterDataList = [
+    {
+        chapterTitle: "Chapter 1: Introduction",
+        episodes: [
+            {
+                episodeNumber: 1,
+                title: "1",
+                mainText: "Lorem ipsum dolor sit amet ttjioadjf jjjlaa Lorem ipsum dolor sit amet ttjioadjf jjjlaa Lorem ipsum dolor sit amet ttjioadjf jjjlaa Lorem ipsum dolor sit amet ttjioadjf jjjlaa Lorem ipsum dolor sit amet ttjioadjf jjjlaa Lorem ipsum dolor sit amet ttjioadjf jjjlaa",
+                audioUrl: "https://example.com/audiofile1-1.mp3",
+                imageUrl: "https://source.unsplash.com/random/800x600?nature"
+            },
+            {
+                episodeNumber: 2,
+                title: "2",
+                mainText: "Sed ut perspiciatis unde omnis iste natus error sit Sed ut perspiciatis unde omnis iste natus error sit Sed ut perspiciatis unde omnis iste natus error sit Sed ut perspiciatis unde omnis iste natus error sit Sed ut perspiciatis unde omnis iste natus error sit",
+                audioUrl: "https://example.com/audiofile1-2.mp3",
+                imageUrl: "https://source.unsplash.com/random/800x600?water"
+            },
+            {
+                episodeNumber: 3,
+                title: "3",
+                mainText: "e omnis iste natus error sit Sed ut perspiciatis und e omnis iste natus error sit Sed ut perspiciatis und e omnis iste natus error sit Sed ut perspiciatis und e omnis iste natus error sit Sed ut perspiciatis und e omnis iste natus error sit Sed ut perspiciatis und",
+                audioUrl: "https://example.com/audiofile1-2.mp3",
+                imageUrl: "https://source.unsplash.com/random/800x600?water"
+            },
+            // Add more episodes for Chapter 1 as needed
+        ]
+    },
+    {
+        chapterTitle: "Chapter 2: The Journey Begins",
+        episodes: [
+            {
+                episodeNumber: 1,
+                title: "1",
+                mainText: "At vero eos et accusamus et iusto odio dignissimos ducimus At vero eos et accusamus et iusto odio dignissimos ducimus At vero eos et accusamus et iusto odio dignissimos ducimus At vero eos et accusamus et iusto odio dignissimos ducimus At vero eos et accusamus et iusto odio dignissimos ducimus",
+                audioUrl: "https://example.com/audiofile2-1.mp3",
+                imageUrl: "https://source.unsplash.com/random/800x600?mountain"
+            },
+            {
+                episodeNumber: 2,
+                title: "2",
+                mainText: "Ut enim ad minima veniam, quis nostrum exercitationem ullamUt enim ad minima veniam, quis nostrum exercitationem ullam Ut enim ad minima veniam, quis nostrum exercitationem ullam Ut enim ad minima veniam, quis nostrum exercitationem ullam Ut enim ad minima veniam, quis nostrum exercitationem ullam",
+                audioUrl: "https://example.com/audiofile2-2.mp3",
+                imageUrl: "https://source.unsplash.com/random/800x600?forest"
+            },
+            {
+                episodeNumber: 3,
+                title: "3",
+                mainText: "Ut qwewqeqe easdsa fdw访问团访问 strum exercitationem ullamUt enim ad minima veniam, quis nostrum exercitationem ullam Ut enim ad minima veniam, quis nostrum exercitationem ullam Ut enim ad minima veniam, quis nostrum exercitationem ullam Ut enim ad minima veniam, quis nostrum exercitationem ullam",
+                audioUrl: "https://example.com/audiofile2-2.mp3",
+                imageUrl: "https://source.unsplash.com/random/800x600?forest"
+            },
+        ]
+    }
+    // Add more chapters as needed
+];
 
 let currentEpisodeIndex = 0; // Start with the first episode
 
 
-function loadEpisodeData(index) {
-    episodeData = episodeDataList[index]
+function loadEpisodeData(chapterIndex, episodeIndex) {
+    const episodeData = chapterDataList[chapterIndex].episodes[episodeIndex];
     // Update the content dynamically
     document.querySelector('main h2').textContent = episodeData.title;
     document.querySelector('main p').textContent = episodeData.mainText;
@@ -57,18 +92,33 @@ function toggleTableOfContents() {
     toc.classList.toggle('active');
 }
 
+
+
 function populateTableOfContents() {
     const toc = document.getElementById('tableOfContents');
-    toc.innerHTML = `
-        <h2>Table of Contents</h2>
-        <ul>
-            <li><a href="#" onclick="loadEpisodeData(0); toggleTableOfContents();">Chapter 1: Introduction</a></li>
-            <li><a href="#" onclick="loadEpisodeData(1); toggleTableOfContents();">Chapter 2: The Journey Begins</a></li>
-            <li><a href="#" onclick="loadEpisodeData(2); toggleTableOfContents();">Chapter 3: The First Challenge</a></li>
-            <!-- Add more chapters as needed -->
-        </ul>
-    `;
+    toc.innerHTML = '<h2>Table of Contents</h2>';
+
+    chapterDataList.forEach((chapter, chapterIndex) => {
+        const chapterElem = document.createElement('div');
+        chapterElem.className = 'chapter';
+        chapterElem.innerHTML = `<div class="chapter-title" onclick="toggleChapter(${chapterIndex})">${chapter.chapterTitle}</div>`;
+
+        const episodesElem = document.createElement('ul');
+        episodesElem.className = 'episodes hidden';
+        episodesElem.id = `chapter-${chapterIndex}-episodes`;
+
+        chapter.episodes.forEach((episode, episodeIndex) => {
+            const episodeElem = document.createElement('li');
+            episodeElem.innerHTML = `<a href="#" onclick="loadEpisode(${chapterIndex}, ${episodeIndex})">${episode.title}</a>`;
+            episodesElem.appendChild(episodeElem);
+        });
+
+        chapterElem.appendChild(episodesElem);
+        toc.appendChild(chapterElem);
+    });
 }
 
-// Make sure to call populateTableOfContents() after defining episodes
-populateTableOfContents();
+function toggleChapter(chapterIndex) {
+    const episodesElem = document.getElementById(`chapter-${chapterIndex}-episodes`);
+    episodesElem.classList.toggle('hidden');
+}

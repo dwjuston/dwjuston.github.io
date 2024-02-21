@@ -37,3 +37,17 @@ figure img {
 .table-of-contents.active {
     left: 0; /* Slide in */
 }
+
+.chapter-title {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.episodes.hidden {
+    display: none;
+}
+
+/* Highlighting style */
+.selected {
+    background-color: #f0f0f0; /* Light grey, adjust as needed */
+}
