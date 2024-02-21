@@ -26,7 +26,6 @@ let currentEpisodeIndex = 0; // Start with the first episode
 
 function loadEpisodeData(index) {
     episodeData = episodeDataList[index]
-    alert(episodeData); // Debugging message
     // Update the content dynamically
     document.querySelector('main h2').textContent = episodeData.title;
     document.querySelector('main p').textContent = episodeData.mainText;
@@ -43,7 +42,6 @@ function loadEpisodeData(index) {
 
 function goToNextEpisode() {
     // Increment the episode index to load the next episode
-    alert(currentEpisodeIndex + 1); // Debugging message
     loadEpisodeData(currentEpisodeIndex + 1);
 }
 
