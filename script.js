@@ -53,3 +53,18 @@ document.querySelector('continueButton').addEventListener('click', (event) => {
 
 // Load the initial episode when the page is ready
 document.addEventListener('DOMContentLoaded', () => loadEpisodeData(currentEpisodeIndex));
+
+function toggleTableOfContents() {
+    const toc = document.getElementById('tableOfContents');
+    toc.classList.toggle('active');
+}
+
+function populateTableOfContents() {
+    const toc = document.getElementById('tableOfContents');
+    toc.innerHTML = '<h2>Table of Contents</h2><ul>' + episodes.map((episode, index) => 
+        `<li><a href="#" onclick="loadEpisode(${index}); toggleTableOfContents();">${episode.title}</a></li>`
+    ).join('') + '</ul>';
+}
+
+// Make sure to call populateTableOfContents() after defining episodes
+populateTableOfContents();
