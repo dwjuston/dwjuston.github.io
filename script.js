@@ -34,8 +34,10 @@ function loadEpisodeData(index) {
 
     // Reload the audio element to apply the new source
     document.querySelector('audio').load();
+    document.querySelector('audio').play().catch(e => console.error("Autoplay was prevented.", e));
 
     currentEpisodeIndex = index;
+    
 }
 
 function goToNextEpisode() {
@@ -44,7 +46,7 @@ function goToNextEpisode() {
 }
 
 // Attach the goToNextEpisode function to the continue button's click event
-document.querySelector('button').addEventListener('click', (event) => {
+document.querySelector('continueButton').addEventListener('click', (event) => {
     event.preventDefault();
     goToNextEpisode();
 });

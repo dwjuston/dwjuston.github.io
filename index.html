@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <link rel="stylesheet" href="style.css">
     <title>Visual Book</title>
 </head>
 <body>
@@ -22,23 +23,22 @@
             <hgroup>
                 <h2>Chapter 1: asd (1)</h2>
             </hgroup>
-            <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>
             <figure>
-                <img src="https://source.unsplash.com/random/800x600?landscape" alt="Scene View" style="display: block; max-width: 100%; height: auto; margin: 0 auto;" />
+                <img src="https://source.unsplash.com/random/800x600?landscape" alt="Scene View" />
             </figure>
-            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
-                <audio controls style="width: 30%;">
+            <div class="media-controls">
+                <audio controls>
                     <source src="https://example.com/audiofile.mp3" type="audio/mpeg">
                 </audio>
-                <button style="width: 30%;" onclick="event.preventDefault()">Continue</button>
+                <button id="continueButton" onclick="preventDefaultAction(event)">Continue</button>
             </div>
         </section>
     </div>
 </main>
 <footer class="container">
-    <small>
-        <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a>
-    </small>
+    <small></small>
 </footer>
+<script src="script.js"></script>
 </body>
 </html>

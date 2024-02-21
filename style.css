@@ -1,0 +1,25 @@
+p {
+    text-align: justify;
+}
+
+figure img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.media-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.media-controls audio {
+    width: 30%;
+}
+
+.media-controls button {
+    width: 30%;
+}
