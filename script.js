@@ -137,12 +137,12 @@ document.addEventListener('DOMContentLoaded', function() {
 
 const tocData = [
     {
-        chapterTitle: "Chapter 1",
-        episodes: ["Chapter 1 (1)", "Chapter 1 (2)", "Chapter 1 (3)"]
+        chapterTitle: "Chapter 3",
+        episodes: ["Chapter 3 (1)", "Chapter 3 (2)", "Chapter 3 (3)"]
     },
     {
-        chapterTitle: "Chapter 2",
-        episodes: ["Chapter 2 (1)", "Chapter 2 (2)"]
+        chapterTitle: "Chapter 4",
+        episodes: ["Chapter 4 (1)", "Chapter 4 (2)"]
     }
 ];
 
