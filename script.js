@@ -156,3 +156,4 @@ function toggleTableOfContents() {
 }
 
 document.addEventListener('DOMContentLoaded', populateTableOfContents);
+document.addEventListener('DOMContentLoaded', loadEpisodeData(0,0));
