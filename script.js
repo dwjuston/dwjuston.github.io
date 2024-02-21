@@ -47,15 +47,13 @@ function goToNextEpisode() {
     loadEpisodeData(currentEpisodeIndex + 1);
 }
 
-// Attach the goToNextEpisode function to the continue button's click event
-document.querySelector('#continueButton').addEventListener('click', (event) => {
-    event.preventDefault();
-    alert('Continue button clicked!'); // Debugging message
-    goToNextEpisode();
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelector('#continueButton').addEventListener('click', (event) => {
+        event.preventDefault();
+        alert('Continue button clicked!');
+        goToNextEpisode();
+    });
 });
-
-// Load the initial episode when the page is ready
-document.addEventListener('DOMContentLoaded', () => loadEpisodeData(currentEpisodeIndex));
 
 function toggleTableOfContents() {
     const toc = document.getElementById('tableOfContents');
