@@ -82,6 +82,20 @@ function getNextChapterAndEpisodeId(currentChapterId, currentEpisodeId) {
     }
 }
 
+function highlightActiveToCItem(chapterIndex, episodeIndex) {
+    // Remove highlight from all ToC items
+    document.querySelectorAll('.toc a').forEach(a => {
+        a.classList.remove('active');
+    });
+
+    // Highlight the active ToC item
+    const selector = `.toc a[data-chapter-id="${chapterIndex}"][data-episode-id="${episodeIndex}"]`;
+    const activeItem = document.querySelector(selector);
+    if (activeItem) {
+        activeItem.classList.add('active');
+    }
+}
+
 function loadEpisodeData(chapterIndex, episodeIndex) {
     let chapterData = chapterDataList[chapterIndex];
     let chapterTitle = chapterData.chapterTitle;
@@ -105,6 +119,7 @@ function goToNextEpisode() {
         currentChapterId = next.nextChapterId;
         currentEpisodeId = next.nextEpisodeId;
         loadEpisodeData(currentChapterId, currentEpisodeId)
+        highlightActiveToCItem(chapterId, episodeId);
     } 
 }
 
@@ -172,6 +187,7 @@ function loadTableOfContents(tocData) {
                 const chapterId = parseInt(this.dataset.chapterId, 10);
                 const episodeId = parseInt(this.dataset.episodeId, 10);
                 loadEpisodeData(chapterId, episodeId); // Call the episode loading function
+                highlightActiveToCItem(chapterId, episodeId);
                 // Optional: Implement highlighting logic here
             });
             episodeLi.appendChild(episodeLink);
@@ -186,3 +202,4 @@ function loadTableOfContents(tocData) {
 document.addEventListener('DOMContentLoaded', function() {
     loadTableOfContents(tocData); // Populate ToC when the page loads
 });
+
