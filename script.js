@@ -119,8 +119,7 @@ document.addEventListener('DOMContentLoaded', loadEpisodeData(0,0));
 document.addEventListener('DOMContentLoaded', function() {
     const toggleTocBtn = document.getElementById('toggleToc');
     const toc = document.getElementById('tableOfContents');
-    const content = document.getElementById('content');
-
+    const content = document.querySelector('.content');
 
     toggleTocBtn.addEventListener('click', function(event) {
         event.preventDefault(); // Prevent the link from navigating
