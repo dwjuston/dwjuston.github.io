@@ -115,45 +115,4 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-
-function populateTableOfContents() {
-    console.log(chapterDataList); // To check the data structure
-    
-    const toc = document.getElementById('tableOfContents');
-    toc.innerHTML = '<h2>Table of Contents</h2>';
-
-    chapterDataList.forEach((chapter, chapterIndex) => {
-        const chapterElem = document.createElement('div');
-        chapterElem.className = 'chapter';
-        chapterElem.innerHTML = `<div class="chapter-title" onclick="toggleChapter(${chapterIndex})">${chapter.chapterTitle}</div>`;
-
-        const episodesElem = document.createElement('ul');
-        episodesElem.className = 'episodes hidden';
-        episodesElem.id = `chapter-${chapterIndex}-episodes`;
-
-        console.log(chapterElem);
-        console.log(episodesElem);
-
-        chapter.episodes.forEach((episode, episodeIndex) => {
-            const episodeElem = document.createElement('li');
-            episodeElem.innerHTML = `<a href="#" onclick="loadEpisode(${chapterIndex}, ${episodeIndex})">${episode.title}</a>`;
-            episodesElem.appendChild(episodeElem);
-        });
-
-        chapterElem.appendChild(episodesElem);
-        toc.appendChild(chapterElem);
-    });
-}
-
-function toggleChapter(chapterIndex) {
-    const episodesElem = document.getElementById(`chapter-${chapterIndex}-episodes`);
-    //episodesElem.classList.toggle('hidden');
-}
-
-function toggleTableOfContents() {
-    const toc = document.getElementById('tableOfContents');
-    toc.classList.toggle('hidden');
-}
-
-document.addEventListener('DOMContentLoaded', populateTableOfContents);
 document.addEventListener('DOMContentLoaded', loadEpisodeData(0,0));

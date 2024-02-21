@@ -24,34 +24,7 @@ figure img {
     width: 30%;
 }
 
-.table-of-contents {
-    position: fixed; /* or absolute */
-    width: 250px; /* Adjust as needed */
-    height: 100%;
-    top: 0;
-    left: -260px; /* Start off-screen */
-    background: #f0f0f0;
-    transition: left 0.3s;
-}
-
-.table-of-contents.active {
-    left: 0; /* Slide in */
-}
-
 .chapter-title {
     cursor: pointer;
     font-weight: bold;
-}
-
-.episodes.hidden {
-    display: none;
-}
-
-/* Highlighting style */
-.selected {
-    background-color: #f0f0f0; /* Light grey, adjust as needed */
-}
-
-.hidden {
-    display: none;
 }
