@@ -40,7 +40,7 @@ function loadEpisodeData(index) {
 
 function goToNextEpisode() {
     // Increment the episode index to load the next episode
-    loadEpisode(currentEpisodeIndex + 1);
+    loadEpisodeData(currentEpisodeIndex + 1);
 }
 
 // Attach the goToNextEpisode function to the continue button's click event
@@ -50,4 +50,4 @@ document.querySelector('button').addEventListener('click', (event) => {
 });
 
 // Load the initial episode when the page is ready
-document.addEventListener('DOMContentLoaded', () => loadEpisode(currentEpisodeIndex));
+document.addEventListener('DOMContentLoaded', () => loadEpisodeData(currentEpisodeIndex));
