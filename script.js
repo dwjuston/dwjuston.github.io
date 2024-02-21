@@ -87,7 +87,7 @@ function loadEpisodeData(chapterIndex, episodeIndex) {
     const chapterTitle = chapterData.chapterTitle;
     const episodeData = chapterData.episodes[episodeIndex];
     // Update the content dynamically
-    document.querySelector('main h2').textContent = chapterTitle + episodeData.episodeNumber;
+    document.querySelector('main h2').textContent = chapterTitle + " (" + episodeData.episodeNumber + ")";
     document.querySelector('main p').textContent = episodeData.mainText;
     document.querySelector('audio source').src = episodeData.audioUrl;
     document.querySelector('figure img').src = episodeData.imageUrl;
@@ -114,12 +114,6 @@ document.addEventListener('DOMContentLoaded', function() {
         goToNextEpisode();
     });
 });
-
-function toggleTableOfContents() {
-    const toc = document.getElementById('tableOfContents');
-    toc.classList.toggle('active');
-}
-
 
 
 function populateTableOfContents() {
@@ -150,3 +144,5 @@ function toggleChapter(chapterIndex) {
     const episodesElem = document.getElementById(`chapter-${chapterIndex}-episodes`);
     episodesElem.classList.toggle('hidden');
 }
+
+populateTableOfContents()
