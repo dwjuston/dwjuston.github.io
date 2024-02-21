@@ -116,3 +116,14 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 document.addEventListener('DOMContentLoaded', loadEpisodeData(0,0));
+document.addEventListener('DOMContentLoaded', function() {
+    const tocToggle = document.getElementById('tocToggle'); // Use the ID to target the ToC button
+    const tocContainer = document.getElementById('toc');
+    const mainContainer = document.querySelector('.container');
+
+    tocToggle.addEventListener('click', function(event) {
+        event.preventDefault();
+        tocContainer.classList.toggle('toc-visible');
+        mainContainer.classList.toggle('main-shrinked');
+    });
+});

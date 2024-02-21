@@ -28,3 +28,28 @@ figure img {
     cursor: pointer;
     font-weight: bold;
 }
+
+
+.toc-container {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px; /* Adjust width as needed */
+    height: 100%;
+    background-color: #f0f0f0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+}
+
+.toc-visible .toc-container {
+    transform: translateX(0);
+}
+
+.main-shrinked {
+    margin-left: 250px; /* Adjust accordingly to match the ToC width */
+}
+
+/* Ensure your main container has a transition for smooth resizing */
+.container {
+    transition: margin-left 0.3s ease;
+}
