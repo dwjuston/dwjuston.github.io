@@ -130,7 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', loadEpisodeData(0,0));
 document.addEventListener('DOMContentLoaded', function() {
     const toggleTocBtn = document.getElementById('toggleToc');
     const toc = document.getElementById('tableOfContents');
@@ -201,5 +200,8 @@ function loadTableOfContents(tocData) {
 
 document.addEventListener('DOMContentLoaded', function() {
     loadTableOfContents(tocData); // Populate ToC when the page loads
+    loadEpisodeData(0,0);
+    highlightActiveToCItem(0,0);
 });
+
 
