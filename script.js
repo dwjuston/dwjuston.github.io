@@ -85,7 +85,7 @@ function getNextChapterAndEpisodeId(currentChapterId, currentEpisodeId) {
 function loadEpisodeData(chapterIndex, episodeIndex) {
     const episodeData = chapterDataList[chapterIndex].episodes[episodeIndex];
     // Update the content dynamically
-    document.querySelector('main h2').textContent = episodeData.title;
+    // document.querySelector('main h2').textContent = episodeData.title;
     document.querySelector('main p').textContent = episodeData.mainText;
     document.querySelector('audio source').src = episodeData.audioUrl;
     document.querySelector('figure img').src = episodeData.imageUrl;
@@ -93,8 +93,6 @@ function loadEpisodeData(chapterIndex, episodeIndex) {
     // Reload the audio element to apply the new source
     document.querySelector('audio').load();
     document.querySelector('audio').play().catch(e => console.error("Autoplay was prevented.", e));
-
-    currentEpisodeIndex = index;
     
 }
 
