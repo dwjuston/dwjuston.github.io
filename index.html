@@ -2,34 +2,43 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
     <title>Visual Book</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Visual Book</h1>
-    </header>
-    <div id="main-container">
-        <aside id="toc-panel">
-            <button id="toggle-toc-btn" aria-label="Toggle Table of Contents">Toggle TOC</button>
-            <!-- Table of Contents content here -->
-        </aside>
-        <section id="content-panel">
-            <div id="episode-content">
-                <!-- Episode content goes here -->
+<nav class="container-fluid">
+    <ul>
+        <li><strong>Visual Book</strong></li>
+    </ul>
+    <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Table of Contents</a></li>
+    </ul>
+</nav>
+<main class="container">
+    <div class="grid">
+        <section>
+            <hgroup>
+                <h2>Chapter 1: asd (1)</h2>
+            </hgroup>
+            <p style="text-align: justify;">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor, dignissim sit amet, adipiscing nec, ultricies sed, dolor. Cras elementum ultrices diam. Maecenas ligula massa, varius a, semper congue, euismod non, mi. Proin porttitor, orci nec nonummy molestie, enim est eleifend mi, non fermentum diam nisl sit amet erat. Duis semper. Duis arcu massa, scelerisque vitae, consequat in, pretium a, enim. Pellentesque congue. Ut in risus volutpat libero pharetra tempor. Cras vestibulum bibendum augue. Praesent egestas leo in pede. Praesent blandit odio eu enim. Pellentesque sed dui ut augue blandit sodales. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Aliquam nibh. Mauris ac mauris sed pede pellentesque fermentum. Maecenas adipiscing ante non diam sodales hendrerit.</p>
+            <figure>
+                <img src="https://source.unsplash.com/random/800x600?landscape" alt="Scene View" style="display: block; max-width: 100%; height: auto; margin: 0 auto;" />
+            </figure>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 20px;">
+                <audio controls style="width: 30%;">
+                    <source src="https://example.com/audiofile.mp3" type="audio/mpeg">
+                </audio>
+                <button style="width: 30%;" onclick="event.preventDefault()">Continue</button>
             </div>
-            <button id="continue-button">Continue</button>
         </section>
-        <aside id="customization-panel">
-            <div id="customization-controls">
-                <!-- Customization Icons -->
-            </div>
-            <div id="sticky-notes">
-                <!-- Sticky Note Edits -->
-            </div>
-        </aside>
     </div>
-    <script src="script.js"></script>
+</main>
+<footer class="container">
+    <small>
+        <a href="#">Privacy Policy</a> • <a href="#">Terms of Service</a>
+    </small>
+</footer>
 </body>
 </html>
