@@ -147,7 +147,7 @@ function populateTableOfContents() {
 
 function toggleChapter(chapterIndex) {
     const episodesElem = document.getElementById(`chapter-${chapterIndex}-episodes`);
-    episodesElem.classList.toggle('hidden');
+    //episodesElem.classList.toggle('hidden');
 }
 
 function toggleTableOfContents() {
