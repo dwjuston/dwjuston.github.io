@@ -153,15 +153,28 @@ function loadTableOfContents(tocData) {
 
     const ul = document.createElement('ul');
 
-    tocData.forEach(chapter => {
+    tocData.forEach((chapter, chapterIndex) => {
         let chapterElem = document.createElement('li');
         chapterElem.textContent = chapter.chapterTitle;
         ul.appendChild(chapterElem);
 
         let episodesUl = document.createElement('ul');
-        chapter.episodes.forEach(episode => {
+        chapter.episodes.forEach((episode, episodeIndex) => {
             let episodeLi = document.createElement('li');
-            episodeLi.textContent = episode;
+            let episodeLink = document.createElement('a');
+            episodeLink.textContent = episode;
+            // Use data attributes to store chapter and episode indices
+            episodeLink.dataset.chapterId = chapterIndex;
+            episodeLink.dataset.episodeId = episodeIndex;
+            episodeLink.addEventListener('click', function(e) {
+                e.preventDefault(); // Prevent default anchor behavior
+                // Convert data attributes to numbers as they are stored as strings
+                const chapterId = parseInt(this.dataset.chapterId, 10);
+                const episodeId = parseInt(this.dataset.episodeId, 10);
+                loadEpisodeData(chapterId, episodeId); // Call the episode loading function
+                // Optional: Implement highlighting logic here
+            });
+            episodeLi.appendChild(episodeLink);
             episodesUl.appendChild(episodeLi);
         });
         ul.appendChild(episodesUl);
