@@ -7,7 +7,7 @@ const chapterDataList = [
                 episodeNumber: 1,
                 title: "1",
                 mainText: "Lorem ipsum dolor sit amet ttjioadjf jjjlaa Lorem ipsum dolor sit amet ttjioadjf jjjlaa Lorem ipsum dolor sit amet ttjioadjf jjjlaa Lorem ipsum dolor sit amet ttjioadjf jjjlaa Lorem ipsum dolor sit amet ttjioadjf jjjlaa Lorem ipsum dolor sit amet ttjioadjf jjjlaa",
-                audioUrl: "https://example.com/audiofile1-1.mp3",
+                audioUrl: "https://drive.google.com/file/d/1y49sBz8ufE9I9wRHbJ3UZHK9ZF7rSZ9y/view?usp=share_link",
                 imageUrl: "https://source.unsplash.com/random/800x600?nature"
             },
             {
