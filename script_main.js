@@ -7,7 +7,7 @@ const chapterDataList = [
                 episodeNumber: 1,
                 title: "1",
                 mainText: "I was born in the year 1632, in the city of York, of a good family, though not of that country, my father being a foreigner of Bremen, who settled first at Hull. He got a good estate by merchandise, and leaving off his trade, lived afterwards at York, from whence he had married my mother, whose relations were named Robinson, a very good family in that country, and from whom I was called Robinson Kreutznaer; but, by the usual corruption of words in England, we are now called—nay we call ourselves and write our name—Crusoe; and so my companions always called me.",
-                audioUrl: "https://video-book-narration.s3.amazonaws.com/1_1.m4a",
+                audioUrl: "https://video-book-narration.s3.amazonaws.com/1_1.mp3",
                 imageUrl: "https://source.unsplash.com/random/800x600?nature"
             },
             {
@@ -21,7 +21,7 @@ const chapterDataList = [
                 episodeNumber: 3,
                 title: "3",
                 mainText: "He bade me observe it, and I should always find that the calamities of life were shared among the upper and lower part of mankind, but that the middle station had the fewest disasters, and was not exposed to so many vicissitudes as the higher or lower part of mankind; nay, they were not subjected to so many distempers and uneasinesses, either of body or mind, as those were who, by vicious living, luxury, and extravagances on the one hand, or by hard labour, want of necessaries, and mean or insufficient diet on the other hand, bring distemper upon themselves by the natural consequences of their way of living; that the middle station of life was calculated for all kind of virtue and all kind of enjoyments; that peace and plenty were the handmaids of a middle fortune; that temperance, moderation, quietness, health, society, all agreeable diversions, and all desirable pleasures, were the blessings attending the middle station of life; that this way men went silently and smoothly through the world, and comfortably out of it, not embarrassed with the labours of the hands or of the head, not sold to a life of slavery for daily bread, nor harassed with perplexed circumstances, which rob the soul of peace and the body of rest, nor enraged with the passion of envy, or the secret burning lust of ambition for great things; but, in easy circumstances, sliding gently through the world, and sensibly tasting the sweets of living, without the bitter; feeling that they are happy, and learning by every day’s experience to know it more sensibly.",
-                audioUrl: "https://video-book-narration.s3.amazonaws.com/1_3.m4a",
+                audioUrl: "https://video-book-narration.s3.amazonaws.com/1_3.mp3",
                 imageUrl: "https://source.unsplash.com/random/800x600?water"
             },
             // Add more episodes for Chapter 1 as needed
