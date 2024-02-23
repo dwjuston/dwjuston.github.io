@@ -14,7 +14,7 @@ const chapterDataList = [
                 episodeNumber: 2,
                 title: "2",
                 mainText: "Sed ut perspiciatis unde omnis iste natus error sit Sed ut perspiciatis unde omnis iste natus error sit Sed ut perspiciatis unde omnis iste natus error sit Sed ut perspiciatis unde omnis iste natus error sit Sed ut perspiciatis unde omnis iste natus error sit",
-                audioUrl: "https://example.com/audiofile1-2.mp3",
+                audioUrl: "https://drive.google.com/file/d/1wzcCemO3BkjONLa9NV08gQupQDV-V5kc/view?usp=share_link",
                 imageUrl: "https://source.unsplash.com/random/800x600?water"
             },
             {
